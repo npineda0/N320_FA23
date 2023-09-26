@@ -65,5 +65,33 @@ console.log("has even number: " + hasEvenNum([1,2,3,4,5]));
 console.log("has even number: " + hasEvenNum([11,21,33,41,15]));
 
 // filter
+var filterArray = [1,2,3];
+
+var firstFilter = filterArray.filter(function(value){
+    return value > 2;
+})
+//only fisplay 3 because only one greater than 2
+console.log("first filter: ", firstFilter);
+
+//only names with 4 letters
+var names = ["carrie", "gabe", "ben", "abbey", "will", "brendon"];
+
+function fourLetters(array) {
+    return array.filter(function(value) {
+        return value.length == 4;
+    })
+}
+// returns 2 names
+console.log("four letter only: ", fourLetters(names));
+
+//filter through classes higher than 300
+var classList=["n115", "n220", "n320", "n317", "n423", "n215" ];
+
+function upperLevel(array) {
+    return array.filter(function(value) {
+        return value.substr(1,3) >= 300;
+    })
+}
+console.log("class filter: ", upperLevel(classList));
 
 // map

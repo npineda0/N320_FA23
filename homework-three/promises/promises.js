@@ -24,25 +24,3 @@ fetchPromise.then(function(response) {
         displayQuote(fetchPromise);
     })
 })
-
-
-//async function with an API call
-
-// async function goChuck() {
-//     //API class
-//     const response =  await fetch("https://api.chucknorris.io/jokes/random");
-//     //format into json
-//     const results = await response.json();
-    
-//     return results;
-// }
-
-
-// goChuck().then((data) => {
-//     console.log(data);
-//     let chuckMessage = document.createElement("p");
-//     chuckMessage.innerHTML = data.value;
-//     document.getElementsByTagName("body")[0].appendChild(chuckMessage);
-// }).catch((error) => {
-//     console.log("there was an error")
-// });

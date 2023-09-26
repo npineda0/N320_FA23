@@ -121,7 +121,6 @@ async function goChuck() {
     return results;
 }
 
-
 goChuck().then((data) => {
     console.log(data);
     let chuckMessage = document.createElement("p");
