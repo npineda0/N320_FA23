@@ -1,0 +1,17 @@
+#quoteContent1,
+#quoteContent2,
+#quoteContent3,
+#quoteContent4,
+#quoteContent5,
+#quoteContent6,
+#quoteContent7,
+#quoteContent8,
+#quoteContent9,
+#quoteContent10
+ {
+    background-color: lightgray;
+    width: 400px;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
+}

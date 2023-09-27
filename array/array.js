@@ -1,6 +1,6 @@
 // ARRAY METHODS
 
-// for each
+// FOR EACH //
 let array = [1,2,3];
 array.forEach(function(value) {
     console.log("for each value: " + value)
@@ -11,7 +11,6 @@ function doubleValues(array) {
     array.forEach(function(value) {
         newArray.push(value*2);
     })
-
     return newArray;
 }
 console.log("Double Values: "+ doubleValues(array));
@@ -45,7 +44,7 @@ function allArrays(array) {
 console.log("all arrays1: " + allArrays([[1,2], ['dog', 'cat'], [3], [true]]));
 console.log("all arrays2: " + allArrays([[1,2], ['dog', 'cat'], [3], true]));
 
-// some, only boolean values
+// SOME // , only boolean values
 var someArray = [10,20,30];
 var someFunction1 = someArray.some(function(value) {
     return value<20;
@@ -64,7 +63,8 @@ function hasEvenNum(array) {
 console.log("has even number: " + hasEvenNum([1,2,3,4,5]));
 console.log("has even number: " + hasEvenNum([11,21,33,41,15]));
 
-// filter
+
+// FILTER //
 var filterArray = [1,2,3];
 
 var firstFilter = filterArray.filter(function(value){
@@ -94,4 +94,79 @@ function upperLevel(array) {
 }
 console.log("class filter: ", upperLevel(classList));
 
-// map
+//filters through students to find who is NOT EMPLYED
+let students = [
+    {
+        firstName: "Greg",
+        lastName: "smith",
+        employed: true
+    },
+    {
+        firstName: "sally",
+        lastName: "richards"
+    },
+    {
+        firstName: "jake",
+        lastName: "qylenhall",
+        employed: true
+    },
+    {
+        firstName: "flo",
+        lastName: "progressive",
+    },
+]
+//this array keeps "employed" key and is labled as false
+let students2 = [
+    {
+        firstName: "Greg",
+        lastName: "smith",
+        employed: true
+    },
+    {
+        firstName: "sally",
+        lastName: "richards",
+        employed: false
+    },
+    {
+        firstName: "jake",
+        lastName: "qylenhall",
+        employed: true
+    },
+    {
+        firstName: "flo",
+        lastName: "progressive",
+        employed: false
+    },
+];
+function filterByIndex(array, key) {
+    return array.filter(function(value){
+        return !value[key];
+    })
+}
+//switch between students and students2
+console.log("not employed: ", filterByIndex(students2, "employed"));
+
+
+// MAP //
+//squares array 
+let mArr = [2,3,4,5,6];
+let mapArray = mArr.map(function(value, index) {
+    return {key: index, value: value*value}
+})
+console.log("squared: ", mapArray);
+
+//firstNames only
+function firstNames(array) {
+    return array.map(function(value) {
+        return value.firstName;
+    })
+}
+console.log("only first names: ", firstNames(students2));
+
+// value * index
+function valueTimesIndex(array) {
+    return array.map(function(value, index) {
+        return value * index;
+    })
+}
+console.log("value times index: ", valueTimesIndex([2,5,9]));
