@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes</title>
+</head>
+<body>
+    <script src="/lib/jquery-3.6.1.min.js"></script>
+    <script>
+        class Person {
+            constructor(name,age) {
+                this.name = name;
+                this.age = age;
+            }
+            //method
+            greeting() {
+                console.log(`Welcome, ${this.name}, you are ${this.age} years old!! :D`);
+            }
+        }
+
+        let William = new Person("William", 21);
+        William.greeting()
+
+        //extend classes 
+        class Student extends Person {
+            constructor(name, age, major) {
+                super(name, age);
+                this.major = major;
+            }
+
+            //method
+            greeting() {
+                //can extend properties & methods using super
+                super.greeting();
+                console.log(`I am a student majoring in ${this.major}. :*`)
+            }
+        }
+
+        let Abigail = new Student("Abigail", 23,"Phsycology");
+        Abigail.greeting();
+    </script>
+    
+</body>
+</html>

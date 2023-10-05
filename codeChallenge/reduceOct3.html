@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reduce Challenge // Oct 3 Tues</title>
+</head>
+<body>
+    <script src="/lib/jquery-3.6.1.min.js"></script>
+    <script>
+        let array = [1, 2, 3, 4, 5];
+        var reduceFunction = array.reduce(function(accumulator, nextValue) {
+            let num = nextValue * nextValue;
+            console.log(num);
+            if (num %2==0) {
+               return  accumulator+num;
+            }
+            return accumulator;
+        }, 50);
+        console.log("reduce function: ", reduceFunction);
+    </script>
+</body>
+</html>

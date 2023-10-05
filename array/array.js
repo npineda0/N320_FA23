@@ -1,6 +1,6 @@
-// ARRAY METHODS
+// //             ARRAY METHODS                // // 
 
-// FOR EACH //
+// // // FOR EACH // // /// // // // // // // // // // 
 let array = [1,2,3];
 array.forEach(function(value) {
     console.log("for each value: " + value)
@@ -44,7 +44,7 @@ function allArrays(array) {
 console.log("all arrays1: " + allArrays([[1,2], ['dog', 'cat'], [3], [true]]));
 console.log("all arrays2: " + allArrays([[1,2], ['dog', 'cat'], [3], true]));
 
-// SOME // , only boolean values
+// // / SOME // // // // // // // // // // // //, only boolean values
 var someArray = [10,20,30];
 var someFunction1 = someArray.some(function(value) {
     return value<20;
@@ -64,7 +64,7 @@ console.log("has even number: " + hasEvenNum([1,2,3,4,5]));
 console.log("has even number: " + hasEvenNum([11,21,33,41,15]));
 
 
-// FILTER //
+// // // FILTER // // // // // // // // // // // // // // // //
 var filterArray = [1,2,3];
 
 var firstFilter = filterArray.filter(function(value){
@@ -147,7 +147,7 @@ function filterByIndex(array, key) {
 console.log("not employed: ", filterByIndex(students2, "employed"));
 
 
-// MAP //
+// // //  MAP // // // // // // // // // // // // // // // // //
 //squares array 
 let mArr = [2,3,4,5,6];
 let mapArray = mArr.map(function(value, index) {
@@ -170,3 +170,73 @@ function valueTimesIndex(array) {
     })
 }
 console.log("value times index: ", valueTimesIndex([2,5,9]));
+
+
+// // // REDUCE // // // // // // // // // // // // // // // // //
+//2 parts: callback, initialValue
+//callback: accumulator, nextValue
+
+let reduceArray = [1,2,3,4,5];
+//do not have to have an initial value(after the curly bracket)
+var reduceFunction = reduceArray.reduce(function(accumulator, nextValue) {
+    return accumulator+ nextValue;
+}, 10);
+console.log("Reduce function1: ", reduceFunction);
+//first number in reduceArray will be initial value if not stated in reduce function
+var reduceFunction2 = reduceArray.reduce(function(accumulator, nextValue) {
+    return accumulator+ nextValue;
+});
+console.log("Reduce function2: ", reduceFunction2);
+
+//reduce array with strings
+let family = [ 'Damon', 'Stefan', 'Enzo', "Eleana", "Bon", "Jer"];
+//output: my familt members are Damon Stefan and Enzo
+let nameFunction = family.reduce(function(accumulator, nextValue) {
+    return accumulator+=" " + nextValue;
+},"My family is");
+console.log("name reduction: " + nameFunction);
+
+//object reduction
+var familyMembers = [
+    {
+        first: 'Damon',
+        age: 23
+    },
+    {
+        first: 'Stefan',
+        age: 22
+    },
+    {
+        first: 'Enzo',
+        age: 24
+    }
+]
+function extractValue(array, key) {
+    //accumulator is an array that u're filling
+    return array.reduce(function(accumulator, nextValue) {
+        accumulator.push(nextValue[key]);
+        return accumulator;
+    }, [])
+}
+console.log("First Name Array: ", extractValue(familyMembers, 'first'));
+
+//short/long family names
+//using family array
+function nameLength(value) {
+    return value.length > 4;
+}
+function partition(array, callback) {
+    return array.reduce(function(accumulator, nextValue) {
+        if(callback(nextValue)) {
+            accumulator[0].push(nextValue);
+        } else {
+            accumulator[1].push(nextValue);
+        }
+        return accumulator;
+    }, [[],[]])
+}
+console.log(partition(family, nameLength))
+
+
+
+
