@@ -15,7 +15,7 @@ function doubleValues(array) {
 }
 console.log("Double Values: "+ doubleValues(array));
 
-// every,only boolean values
+// // // EVERY,only boolean values // // // // // // // // //
 var everyArray = [-1,-2,-3];
 var everyFunction1 = everyArray.every(function(value) {
     return value<0;

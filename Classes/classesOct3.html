@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classes</title>
+    <title>Classes oct 3rd & 5th</title>
 </head>
 <body>
     <script src="/lib/jquery-3.6.1.min.js"></script>
     <script>
+        //classes are object templates
         class Person {
             constructor(name,age) {
                 this.name = name;
@@ -40,6 +41,48 @@
 
         let Abigail = new Student("Abigail", 23,"Phsycology");
         Abigail.greeting();
+
+        //  //  //  //  //  //  //  //  //
+
+        class Vehicle {
+            constructor(make, model, year) {
+                this.make = make;
+                this.model = model;
+                this.year = year;
+            }
+
+            vehicleInfo() {
+                //templete literal ``
+                return `This vehicle is a ${this.year} ${this.make} ${this.model}`
+            }
+        }
+
+        class Car extends Vehicle {
+            constructor(doors, transmission, ...args) {
+                //"rest(...args)" to add properties
+                super(...args);
+                this.doors = doors;
+                this.transmission = transmission;
+                this.wheels = 4;
+            }
+        }
+        let charger = new Car(4, "automatic","dodge", "charger", 2000);
+        console.log(charger.vehicleInfo());
+        console.log(charger.doors +", "+ charger.transmission +", "+  charger.wheels);
+
+        class Motorcycle extends Vehicle {
+            constructor() {
+                super(...arguments);
+                this.wheels = 2;
+            }
+            caution() {
+                return "make sure you purchase a helmet!";
+            }
+        }
+        let harleyDavidson = new Motorcycle("Harley Davidson", "FireBird", "2023");
+        console.log(harleyDavidson.vehicleInfo());
+        console.log(harleyDavidson.caution());
+
     </script>
     
 </body>

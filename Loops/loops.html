@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOOPS 10/10</title>
+</head>
+<body>
+    <script src="/lib/jquery-3.6.1.min.js"></script>
+    <script>
+        //For
+        for(let i=0; i<5; i++) {
+            console.log(i);
+        }
+
+        //while
+        //set initital value before starting loop
+        let w = 0;
+        while(w < 5) {
+            console.log("while: ", w);
+            w++;
+        }
+
+        //do while
+        let d = 10;
+        do {
+            console.log("doWhile: ", d);
+            d--;
+        } while (d < 5);
+
+        const Course = {
+            "cNum": "n320",
+            "cTitle": "Introduction to Vue",
+            "prereq": false,
+            "offering": ['fall', 'spring', 'summer'],
+            "limit": 20
+        }
+        let seasons = ['fall', 'winter', 'spring', 'summer'];
+        //for .. in
+
+        for(property in Course) {
+            console.log(property + ": " + Course(property));
+        }
+
+        for(s in seasons) {
+            console.log(s + ": " + seasons(s));
+        }
+
+        //for.. of
+        // DO NOT HAVE access to keys/index, just values
+        for(p of Course) {
+            console.log(p + ": " + Coursw(p));
+        }
+
+    </script>
+</body>
+</html>

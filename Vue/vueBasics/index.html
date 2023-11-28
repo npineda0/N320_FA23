@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VUE Basics</title>
+</head>
+<body>
+
+    <h1>N320 course goals</h1>
+    <section id="myGoals">
+        <p>{{courseGoal1}}</p>
+        <!-- interpolation to disp -->
+        <p>{{courseGoal2}}</p>
+        <p> <a v-bind:href="vueLink">vue resource</a> </p>
+        <p>my goal: {{ newGoal() }}</p>
+        <p v-html="courseGoal3"></p>
+
+        <button v-on:click="addMore(5)">ADD</button>
+        <button v-on:click="remove">REMOVE</button>
+        <p>count: {{ counter }}</p>
+
+        <!-- function with paranthesese // data binding -->
+        <!-- <input type="text" v-bind:value="name" v-on:input="setName"/> -->
+        <!-- v-model replaces the need for v-bind&v-on // 2 way data binding -->
+        <input type="text" v-model="name">
+        <p>{{ name }}</p>
+        <p>{{ fullName }}</p>
+        <p>Name Length: {{ nameData[0] }} </p>
+        <p> Middle Character: {{ nameData[1] }} </p>
+        <button v-on:click="resetName">reset Name</button>
+        <p></p>
+        <!-- .prevent modifier, stops submit from reseting the page 
+        and just the alert will appear -->
+        <form v-on:submit.prevent="submitForm">
+            <input v-on:keyup.space="consoleMe"type="text">
+            <button>sign up</button>
+        </form>
+
+    </section>
+    
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="/lib/jquery-3.6.1.min.js"></script>
+    <script src = "app.js"></script>
+</body>
+</html>
