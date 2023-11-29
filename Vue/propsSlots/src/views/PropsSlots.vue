@@ -5,7 +5,7 @@
     <props-one :greeting="greeting" :who="who" :myVue="myVue" msg="Props are awesome!"></props-one>
     <props-two v-bind="book"></props-two>
   </div>
-  <div>
+  <div> 
     <slot-one>
       <h2>This is from App.vue</h2>
       <template v-slot:greeting>{{ greeting }}</template>
