@@ -1,15 +1,15 @@
 <template>
-    <div>
+    <div class="viewMember">
         <p>{{ name }}</p>
+        <p>Role: {{ role }}</p> 
         <button @click="toggleDetails">{{ visibleData ? "Hide": "Show" }} Details</button>
         <div v-if="visibleData">
             <p>Phone: {{ phone }}</p>
             <p>Email: {{ email }}</p>
-            <p>Role: {{ role }}</p> 
+            <p>Team: {{ team }}</p>
             <button>Join </button>
         </div>
     </div>
-    <br/>
 </template>
 <!-- name phone email role -->
 
@@ -33,3 +33,12 @@ export default {
     }
 }
 </script>
+
+<style scoped>
+    .viewMember {
+        height: 240px;
+        width: 200px;
+        background-color: lightblue;
+        text-align: center;
+    }
+</style>

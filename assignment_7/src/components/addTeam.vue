@@ -1,5 +1,5 @@
 <template>
-<form @submit.prevent="submitData">
+<form class="form" @submit.prevent="submitData">
     <label>Team Name:</label>
     <input type="text"  v-model="enteredTeamName" placeholder="teamName"> <br/>
     <label>Member Role:</label> 
@@ -28,3 +28,7 @@ export default {
     }
 }
 </script>
+
+<style>
+    
+</style>
