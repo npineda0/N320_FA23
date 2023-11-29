@@ -1,9 +1,9 @@
 <template>
-    <header>
-        <nav>
-            <RouterLink to="/">Home</RouterLink>
-            <RouterLink to="/students">Students</RouterLink>
-            <RouterLink :to="{name:'props'}"></RouterLink>
-        </nav>
-    </header>
+  <header>
+    <nav>
+       <RouterLink to="/">Home</RouterLink>
+       <RouterLink to="/students">Students</RouterLink>
+       <RouterLink :to="{name:'props'}">Props</RouterLink>
+    </nav>
+  </header>
 </template>
