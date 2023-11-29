@@ -3,7 +3,7 @@
   <add-team></add-team>
   <div>
     <h2>Members:</h2>
-    <view-members></view-members>
+    <view-members v-for="member in members" :key="member.id" :name="member.name" :phone="member.phone" :email="member.email" :role="member.role"></view-members>
   </div>
 </template>
 
@@ -15,7 +15,7 @@
         {
           id: 1,
           name: "Chandler Bing",
-          phone: "123 123 1234",
+          phone: "1231231234",
           email: "cBing@gmail.com",
           role: 'Developer',
           team: '',
@@ -111,6 +111,11 @@
       ],
       }
     },
+    methods: {
+      addTeam(teamName) {
+        
+      }
+    }
     
   }
 </script>
