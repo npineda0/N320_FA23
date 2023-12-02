@@ -2,12 +2,12 @@
     <div class="viewMember">
         <p>{{ name }}</p>
         <p>Role: {{ role }}</p> 
-        <button @click="toggleDetails">{{ visibleData ? "Hide": "Show" }} Details</button>
+        <custom-button @click="toggleDetails">{{ visibleData ? "Hide": "Show" }} Details</custom-button>
         <div v-if="visibleData">
             <p>Phone: {{ phone }}</p>
             <p>Email: {{ email }}</p>
             <p>Team: {{ team }}</p>
-            <button>Join </button>
+            <custom-button>Join </custom-button>
         </div>
     </div>
 </template>
@@ -36,9 +36,12 @@ export default {
 
 <style scoped>
     .viewMember {
-        height: 240px;
+        height: 290px;
         width: 200px;
         background-color: lightblue;
         text-align: center;
+        border-radius: 20px;
+        padding: 2px;
+        margin-bottom: 10px;
     }
 </style>

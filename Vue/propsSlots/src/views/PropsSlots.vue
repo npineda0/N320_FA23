@@ -12,13 +12,13 @@
       <template #person></template>
     </slot-one>
   </div>
-  <!-- <div>
-    <slot-two>
+  <div>
+    <!-- <slot-two>
       <ul v-if="pastStudents.length!=0">
         <li v-for="s in pastStudents" :key="s.sName">{{ s.sName }}</li>
       </ul>
-    </slot-two>
-  </div> -->
+    </slot-two> -->
+  </div>
   <div>
     <project-data></project-data>
   </div>

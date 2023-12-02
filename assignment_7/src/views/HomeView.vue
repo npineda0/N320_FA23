@@ -3,7 +3,7 @@
   <add-team></add-team>
   <div>
     <h2>Members:</h2>
-    <view-members v-for="member in members" :key="member.id" :name="member.name" :phone="member.phone" :email="member.email" :role="member.role"></view-members>
+    <view-members v-for="member in members" :key="member.id" :name="member.name" :phone="member.phone" :email="member.email" :role="member.role" :team="member.team"></view-members>
   </div>
 </template>
 
@@ -111,11 +111,6 @@
       ],
       }
     },
-    methods: {
-      addTeam(teamName) {
-        
-      }
-    }
     
   }
 </script>
