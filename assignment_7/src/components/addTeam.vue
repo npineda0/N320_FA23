@@ -125,15 +125,11 @@ export default {
             this.$emit('add-team', this.enteredTeamName, this.enteredMemberRole)
         }
     },
-        filterRole() {
-            let memRoles = this.members
-
-            if (this.enteredMemberRole)
-            memRoles = memRoles.filter((item) => {
-                return (item.role == this.enteredMemberRole)
-            })
-            console.log(enteredMemberRole)
-    }
+    // computed: {
+    //     filterRole() {
+    //         let filteredRole = this.members;
+    //     }
+    // }
 }
 </script>
 
