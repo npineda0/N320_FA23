@@ -1,7 +1,7 @@
 <template class="template">
   <p class="title">Conference Session Information: </p>
   <p class="count">10 Sessions </p>
-  
+  <view-session v-for="session in sessions" :key="session.id" :title="session.title" :desc="session.desc" :presenter="session.presenter" :tags="session.tags" :sTime="session.sTime" :sDay="session.sDay"></view-session>
 </template>
 
 
