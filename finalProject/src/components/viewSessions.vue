@@ -1,13 +1,14 @@
 <template>
      <div class="viewSession">
         <p class="title">{{ title }}</p>
-        <p class="presenter">{{ presenter }}</p>
-        <p class="date">{{ sDay  }} {{ sTime }}</p>
+        <div class="nameDate">
+            <p class="presenter">Presented By: {{ presenter }}</p>
+            <p class="date">{{ sDay  }}: {{ sTime }}</p>
+        </div>
         <p class="desc">{{ desc }}</p>
         <p class="tags">Categories: {{ tags }}</p>
     </div>
 </template>
-
 
 <script>
     export default {
@@ -36,6 +37,20 @@
 .viewSession {
     height: 400px;
     width: 1000px;
-    background-color: pink;
+    background-color: #f5f2e1;
+    border-radius: 20px;
+    margin-left: 40px;
+    font-family: gill sans;
+}
+.title {
+    width: 900px;
+    padding-top: 10px;
+}
+.nameDate {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 920px;
 }
 </style>
