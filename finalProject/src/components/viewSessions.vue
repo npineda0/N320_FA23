@@ -53,4 +53,9 @@
     margin: 0 auto;
     width: 920px;
 }
+.desc {
+    width: 920px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
 </style>
